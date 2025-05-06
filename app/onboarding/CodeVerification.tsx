@@ -66,7 +66,7 @@ const CodeVerification = () => {
 
                 <TouchableOpacity
                     className="text-white items-center  w-3/4 m-2.5  rounded-full"
-                    onPress={()=>router.push("/Registration")}>
+                    onPress={()=>router.navigate("/onboarding/Registration")}>
                     <Text
 
                         className="text-lg text-primary font-semibold ">Send again</Text>

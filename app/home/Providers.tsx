@@ -77,7 +77,7 @@ const Providers = () => {
                                   providerRating={item.rating}
                                   providerLocation={item.location}
                                   image={item.image}
-                                  onPress={() => router.push("/ProviderDetail/adugan")}
+                                  onPress={() => router.push("/home/ProviderDetail")}
                     />
                 )}
                 showsVerticalScrollIndicator={false}

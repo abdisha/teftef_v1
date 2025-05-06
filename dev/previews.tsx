@@ -1,6 +1,6 @@
 import {ComponentPreview, Previews} from "@react-buddy/ide-toolbox";
 import {PaletteTree} from "./palette";
-import PhoneLogin from "@/app/PhoneLogin";
+import PhoneLogin from "@/app/onboarding/PhoneLogin";
 
 const ComponentPreviews = () => {
     return (

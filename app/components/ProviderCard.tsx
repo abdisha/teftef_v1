@@ -21,12 +21,10 @@ const ProviderCard = ({
                       }: ProviderCardProps) => {
 
     return (
-        <View   style={{flex: 1, backgroundColor: '#8f8787', borderRadius: 10, marginBottom: 10}}>
+        <View   style={{flex: 1, backgroundColor: '#8f8787', borderRadius: 10, marginBottom: 5}}>
             <TouchableNativeFeedback
                 background={TouchableNativeFeedback.Ripple('#a7d7fa', false,)}
                 onPress={onPress}>
-
-
                 <View style={{flex: 1, flexDirection: 'row', backgroundColor: '#fff', borderRadius: 10, padding: 15}}>
                     <View style={{marginRight: 10}}>
                         <Image source={image} style={styles.image}/>
@@ -49,7 +47,6 @@ const ProviderCard = ({
                     </View>
 
                 </View>
-
             </TouchableNativeFeedback>
         </View>
 

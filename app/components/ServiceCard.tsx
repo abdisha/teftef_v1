@@ -1,4 +1,4 @@
-import { View, StyleSheet, Pressable, Image, Text, Alert, ImageProps } from "react-native";
+import {View, StyleSheet, Pressable, Image, Text, Alert, ImageProps, TouchableNativeFeedback} from "react-native";
 
 interface ServiceCardProps {
     serviceName: string;
@@ -7,22 +7,28 @@ interface ServiceCardProps {
     image: ImageProps;
     onPress?: () => void;
 }
-const ServiceCard = ({ serviceName, serviceDescription, totalServiceProvider, image, onPress }: ServiceCardProps) => {
+
+const ServiceCard = ({serviceName, serviceDescription, totalServiceProvider, image, onPress}: ServiceCardProps) => {
     return (
+        <TouchableNativeFeedback
+            background={TouchableNativeFeedback.Ripple('#a7d7fa', false,)}
 
-        <Pressable style={styles.container} onPress={onPress}>
-            <Image style={styles.image} source={image} />
-            <View style={{ flex: 1 }}>
-                <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#349CFF' }}>{serviceName}</Text>
-                <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginVertical: 10 }}>
-                    {serviceDescription.map((description, index) => (
-                        <Text key={index} style={styles.describeText}>{description}</Text>
-                    ))}
+            onPress={onPress}>
+            <View   className="flex flex-row py-6 bg-base100 px-2 justify-center items-center mt-2 shadow-2xl rounded-2xl">
+                <Image className="h-24 w-24 mx-2" source={image}/>
+                <View className="ml-2 flex-1 justify-center items-start">
+                    <Text className="font-semibold text-2xl p-2 text-primary">{serviceName}</Text>
+                    <View className=" flex flex-row ">
+                        {serviceDescription.map((description, index) => (
+                            <Text key={index} className="mx-1 px-3 py-1 bg-gray-200 rounded-full">{description}</Text>
+                        ))}
+                    </View>
+
+                    <Text className="font-medium text-lg p-2"> {totalServiceProvider}+ Provider</Text>
                 </View>
-
-                <Text style={{ fontSize: 14, color: '#999', borderRadius: 10, }}>provider {totalServiceProvider}</Text>
             </View>
-        </Pressable>
+
+        </TouchableNativeFeedback>
 
     )
 

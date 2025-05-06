@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, TouchableOpacity,Image, View} from "react-native";
 import {useRouter} from "expo-router";
 
-const Welcome = () => {
+const Index = () => {
     const router = useRouter();
     return (
         <View className={"flex-1  items-center bg-base100"}>
@@ -18,7 +18,7 @@ const Welcome = () => {
                    className="bg-primary w-3/4 h-14 justify-center items-center text-white  rounded-full"
                    onPress={() => {
 
-                       router.push('/PhoneLogin');
+                       router.push('/onboarding/PhoneLogin');
                    }}>
                    <Text className="text-lg  text-base100 font-semibold">Get Started</Text>
                </TouchableOpacity>
@@ -32,4 +32,4 @@ const Welcome = () => {
     );
 };
 
-export default Welcome;
+export default Index;

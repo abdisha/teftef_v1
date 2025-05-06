@@ -5,23 +5,24 @@ import {MaterialIcons} from "@expo/vector-icons";
 import ServiceCard from "@/app/components/ServiceCard";
 import {useRouter} from "expo-router";
 
-const Home = () => {
+const Index = () => {
     const router = useRouter();
     return (
         <SafeAreaView className="flex flex-1 bg-base100 px-3 mt-2">
-            <Pressable  onPress={() => {
-                router.push('/Profile');
-            }}  className="flex flex-row justify-between items-center shadow-2xl bg-base100 rounded-2xl p-4 mt-3">
+            <TouchableOpacity
+                onPress={() => {
+                    router.push('/profile');
+                }} className="flex flex-row justify-between items-center shadow-2xl bg-white rounded-2xl p-4 mt-3">
                 <Text className="font-semibold text-xl text-base-content text-primary">
                     Hey, John Doe
                 </Text>
                 <View
                     className="bg-base100 rounded-full p-2"
-                   >
+                >
                     <MaterialIcons name={'person'} size={28}/>
 
                 </View>
-            </Pressable>
+            </TouchableOpacity>
             <View className="flex flex-row items-center mt-6">
                 <Image
                     style={{objectFit: "contain",}}
@@ -36,14 +37,14 @@ const Home = () => {
                 <Text className="text-lg text-base-content mb-4">
                     Discover top-rated service providers near you for all your needs
                 </Text>
-                <View className="flex-1  justify-between items-center">
+                <View className="justify-between items-center">
 
                     <ServiceCard serviceName={"Technician"}
                                  serviceDescription={["Electric", "Disha", "Plumber"]}
                                  totalServiceProvider={400}
                                  image={require('@/assets/images/maid.png')}
                                  onPress={() => {
-                                     router.push('/Providers');
+                                     router.push('/home/Providers');
                                  }}/>
 
                     <ServiceCard serviceName={"House Maid"}
@@ -67,7 +68,7 @@ const Home = () => {
 
     );
 }
-export default Home;
+export default Index;
 
 const homeScreenStyles = StyleSheet.create({
     container: {
