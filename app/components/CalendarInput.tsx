@@ -1,5 +1,15 @@
 import React, { useState } from 'react';
-import { View, TextInput, StyleSheet, TextInputProps, ViewStyle, TextStyle, Platform, Pressable } from 'react-native';
+import {
+  View,
+  TextInput,
+  StyleSheet,
+  TextInputProps,
+  ViewStyle,
+  TextStyle,
+  Platform,
+  Pressable,
+  Text
+} from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import {MaterialIcons} from "@expo/vector-icons";
 
@@ -14,6 +24,8 @@ interface CalendarInputProps extends Omit<TextInputProps, 'onChangeText' | 'valu
   defaultColor?: string;
   minimumDate?: Date;
   maximumDate?: Date;
+
+  label: string;
   returnKeyType?: 'done' | 'next' | 'go' | 'search' | 'send';
 }
 
@@ -28,6 +40,7 @@ const CalendarInput: React.FC<CalendarInputProps> = ({
   defaultColor = '#aaa',
   minimumDate,
   maximumDate,
+    label,
     returnKeyType="done",
   ...rest
 }) => {
@@ -44,13 +57,15 @@ const CalendarInput: React.FC<CalendarInputProps> = ({
   };
 
   return (
-    <View>
+    <View className="my-2">
+      <Text className="font-semibold text-gray-500">{label}</Text>
       <Pressable
         onPress={() => {
           setIsFocused(true);
           setShowPicker(true);
         }}
-        style={[styles.inputContainer, containerStyle, isFocused && { borderColor: focusedColor }]}
+        className="bg-gray-100 w-full items-center rounded-xl px-3  h-14 text-xl  flex-row mt-2"
+        style={[containerStyle, isFocused && { borderColor: focusedColor,borderWidth:1 }]}
       >
         <MaterialIcons
           name="calendar-today"
@@ -89,7 +104,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
     alignItems: 'center',
-    borderWidth: 1,
     borderColor: '#aaa',
     borderRadius: 8,
     paddingHorizontal: 10,

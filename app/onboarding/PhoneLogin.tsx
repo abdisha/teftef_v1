@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Image, Text, TextInput, TouchableOpacity, View} from "react-native";
 import {useRouter} from "expo-router";
 import {CountryButton, CountryPicker} from "react-native-country-codes-picker";
+import {CountryItem} from "react-native-country-codes-picker/types/Types";
 
 
 const PhoneLogin = () => {
@@ -25,7 +26,7 @@ const PhoneLogin = () => {
                 <View className="flex flex-row justify-between w-3/4 items-center ">
                     <TouchableOpacity
                         onPress={() => setShow(true)}
-                        className="bg-gray-200 w-20  h-14  justify-center items-center  rounded-2xl"
+                        className="bg-gray-100 w-20 mb-1 h-14 text-xl  justify-center items-center  rounded-xl"
                     >
                         <Text style={{
                             color: 'black',
@@ -50,11 +51,11 @@ const PhoneLogin = () => {
 
                         ListHeaderComponent={ListHeaderComponent}/>
                     <TextInput keyboardType="number-pad"
-                               className=" w-3/4 h-14 text-xl  bg-gray-200 text-left px-5 rounded-2xl mb-2"
+                               className=" w-3/4 h-14 text-xl  bg-gray-100 text-left px-5 rounded-xl mb-2"
                                placeholder="Entry you phone number"/>
                 </View>
                 <TouchableOpacity
-                    className="bg-primary text-white items-center  w-3/4 m-2.5 py-2 rounded-full"
+                    className="bg-primary text-white items-center  w-3/4 m-2.5 py-2 rounded-xl"
                     onPress={() => route.navigate('/onboarding/CodeVerification')}>
                     <Text className="text-lg text-base100 font-semibold py-2">Send Code</Text>
                 </TouchableOpacity>
@@ -67,7 +68,7 @@ const PhoneLogin = () => {
 };
 
 export default PhoneLogin;
-function ListHeaderComponent({countries, lang, onPress}) {
+function ListHeaderComponent({countries, lang, onPress}:{countries: CountryItem[], lang: string, onPress: (country: CountryItem) => void}) {
     return (
         <View
             style={{
@@ -77,7 +78,7 @@ function ListHeaderComponent({countries, lang, onPress}) {
             <Text>
                 Popular countries
             </Text>
-            {countries?.map((country, index) => {
+            {countries?.map((country:CountryItem, index) => {
                 return (
                     <CountryButton key={index} item={country} name={country?.name?.[lang || 'en']} onPress={() => onPress(country)} />
                 )

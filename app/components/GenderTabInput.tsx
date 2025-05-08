@@ -29,20 +29,21 @@ const GenderTabInput: React.FC<GenderTabInputProps> = ({
                                                            options = defaultOptions,
                                                        }) => {
     return (
-        <View style={[styles.container, containerStyle]}>
-            <View style={styles.header}>
-                <MaterialIcons name="wc" size={iconSize} color={focusedColor} style={styles.icon}/>
-                <Text style={[styles.title, labelStyle]}>Select Gender</Text>
+        <View className="w-full h-24 my-2" style={[ containerStyle]}>
+            <View className="flex-row items-center">
+                <MaterialIcons name="wc" className="text-gray-500" size={iconSize} />
+                <Text className="text-gray-500 font-semibold" style={[labelStyle]}>Select Gender</Text>
             </View>
-            <View style={styles.tabsContainer}>
+            <View className="bg-gray-100 w-full items-center rounded-xl px-3  h-14 text-xl  flex-row mt-2">
                 {options.map((option) => {
                     const isSelected = gender === option;
                     return (
                         <Pressable
                             key={option}
                             onPress={() => onChangeGender(option)}
+                            className="flex-1 items-center justify-center py-3.5 rounded-xl shadow-2xl"
                             style={[
-                                styles.tab,
+
                                 tabStyle,
                                 isSelected && {
                                     borderColor: '#4c4c4d',
@@ -73,27 +74,7 @@ const styles = StyleSheet.create({
         width: '100%',
         backgroundColor: '#fff'
     },
-    header: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginBottom: 8,
-    },
-    icon: {
-        marginRight: 8,
-    },
-    title: {
-        fontSize: 16,
-        fontWeight: '500',
-        color: '#000',
-    },
-    tabsContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        backgroundColor: '#f0f0f0',
-        borderRadius: 8,
-        padding: 3,
 
-    },
     tab: {
         flex: 1,
         borderColor: '#aaa',

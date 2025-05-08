@@ -21,10 +21,10 @@ const ProfileLayout = () => {
                 gestureDirection: 'horizontal',
             }}
         >
-            <Stack.Screen name="ServiceEdit"  options={{
-                title: 'Service Edit',
+            <Stack.Screen name="EditPortfolio"  options={{
+                title: 'Portfolio',
                 headerShown: true,
-                headerTitle: 'Service Edit',
+                headerTitle: 'Portfolio',
                 headerTintColor:'#3DA1FF',
                 headerTitleStyle:{
                     fontWeight: 'bold',

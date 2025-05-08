@@ -14,7 +14,7 @@ const ServiceCard = ({serviceName, serviceDescription, totalServiceProvider, ima
             background={TouchableNativeFeedback.Ripple('#a7d7fa', false,)}
 
             onPress={onPress}>
-            <View   className="flex flex-row py-6 bg-base100 px-2 justify-center items-center mt-2 shadow-2xl rounded-2xl">
+            <View   className="flex flex-row py-6 bg-white px-2 justify-center items-center mt-2 shadow-2xl rounded-2xl">
                 <Image className="h-24 w-24 mx-2" source={image}/>
                 <View className="ml-2 flex-1 justify-center items-start">
                     <Text className="font-semibold text-2xl p-2 text-primary">{serviceName}</Text>

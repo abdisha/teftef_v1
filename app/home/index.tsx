@@ -8,21 +8,31 @@ import {useRouter} from "expo-router";
 const Index = () => {
     const router = useRouter();
     return (
-        <SafeAreaView className="flex flex-1 bg-base100 px-3 mt-2">
-            <TouchableOpacity
-                onPress={() => {
-                    router.push('/profile');
-                }} className="flex flex-row justify-between items-center shadow-2xl bg-white rounded-2xl p-4 mt-3">
+        <SafeAreaView className="flex flex-1 bg-base100 px-4 mt-2">
+            <View
+                 className="flex flex-row justify-between items-center p-4 mt-1">
                 <Text className="font-semibold text-xl text-base-content text-primary">
                     Hey, John Doe
                 </Text>
-                <View
-                    className="bg-base100 rounded-full p-2"
-                >
-                    <MaterialIcons name={'person'} size={28}/>
 
+                <View className="flex-row items-center justify-between w-1/5">
+
+                    <TouchableOpacity className="font-semibold text-xl text-base-">
+                        <MaterialIcons name={'notifications'} size={28} color={'#349CFF'}/>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                        className=" "
+                        onPress={() => {
+                            router.push('/profile');
+                        }}
+                    >
+                        <MaterialIcons name={'person'} size={28} color={'#349CFF'}/>
+
+                    </TouchableOpacity>
                 </View>
-            </TouchableOpacity>
+            </View>
+
             <View className="flex flex-row items-center mt-6">
                 <Image
                     style={{objectFit: "contain",}}
@@ -31,8 +41,6 @@ const Index = () => {
                 />
                 <Text className="font-semibold text-2xl text-primary ">Services</Text>
             </View>
-
-
             <View className="flex flex-1 my-4">
                 <Text className="text-lg text-base-content mb-4">
                     Discover top-rated service providers near you for all your needs

@@ -32,7 +32,7 @@ const Registration=()=> {
 
 
     return (
-        <View className="flex justify-center px-4 mt-10">
+        <View className="flex justify-center px-8 mt-10">
             <View className="flex flex-row items-center mt-10 ">
                 <Image
                     style={{objectFit: "contain",}}
@@ -53,9 +53,9 @@ const Registration=()=> {
                         <TextInputWithIcon label={"First Name"} returnKeyType={'next'} iconName="person" placeholder="Entry First Name" />
                         <TextInputWithIcon label="Last Name" returnKeyType={'next'} iconName="person" placeholder="Entry Last Name" />
 
-                        <CalendarInput returnKeyType={"next"} date={null} onChangeDate={() => { }} placeholder="Entry Date of Birth" />
+                        <CalendarInput  label={"Date of Birth"} returnKeyType={"next"} date={null} onChangeDate={() => { }} placeholder="Entry Date of Birth" />
                         <GenderTabInput gender={gender} onChangeGender={setGender} />
-                        <TouchableOpacity className="w-full h-14 rounded-2xl justify-center mt-2  bg-primary"
+                        <TouchableOpacity className="w-full h-14 rounded-xl justify-center mt-4  bg-primary"
                                           onPress={() => {
                          router.push("/home")
                         }}>

@@ -22,7 +22,7 @@ const Index = () => {
 
 
                 </View>
-                    <TouchableOpacity onPress={() => router.navigate("/profile/ProfileEdit")}>
+                    <TouchableOpacity onPress={() => router.navigate("/profile/EditProfile")}>
                         <Text className="text-blue-500 font-extrabold text-xl">Edit Profile</Text>
                     </TouchableOpacity>
             </View>
@@ -34,7 +34,7 @@ const Index = () => {
                     </View>
 
                    <TouchableOpacity
-                    onPress={() => router.navigate("/profile/ServiceEdit")}
+                    onPress={() => router.navigate("/profile/EditPortfolio")}
                    >
                        <Text className="text-blue-500 font-extrabold text-xl">Edit Service</Text>
                    </TouchableOpacity>
